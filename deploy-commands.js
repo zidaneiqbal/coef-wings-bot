@@ -50,6 +50,37 @@ const commands = [
     .toJSON(),
 
   new SlashCommandBuilder().setName("max-coef").setDescription("Known Max Wings Coefficient").toJSON(),
+
+  // new SlashCommandBuilder()
+  //   .setName("world-drop")
+  //   .setDescription("Calculate World Drop per hour")
+  //   .addStringOption((option) => option.setName("world_no").setDescription("World Number").setRequired(true))
+  //   .addIntegerOption((option) => option.setName("clear_time").setDescription("Clear Time (seconds)").setRequired(true))
+  //   .addNumberOption((option) => option.setName("xp_boost").setDescription("XP Boost Multiplier").setRequired(false))
+  //   .addNumberOption((option) => option.setName("gold_boost").setDescription("Gold Boost Multiplier").setRequired(false))
+  //   .addNumberOption((option) => option.setName("ore_boost").setDescription("Ore Boost Multiplier").setRequired(false))
+  //   .toJSON(),
+
+  // new SlashCommandBuilder()
+  //   .setName("exp-to-level-up")
+  //   .setDescription("Calculate Exp Needed to Level Up")
+  //   .addIntegerOption((option) => option.setName("current_level").setDescription("Current Level").setRequired(true))
+  //   .addIntegerOption((option) => option.setName("target_level").setDescription("Target Level").setRequired(false))
+  //   .toJSON(),
+
+  new SlashCommandBuilder()
+    .setName("hours-to-level-up")
+    .setDescription("Calculate Hours Needed to Level Up")
+    .addIntegerOption((option) => option.setName("current_level").setDescription("Current Level").setRequired(true))
+    .addIntegerOption((option) => option.setName("target_level").setDescription("Target Level").setRequired(true))
+    .addStringOption((option) => option.setName("world_no").setDescription("World Number").setRequired(true))
+    .addIntegerOption((option) => option.setName("clear_time").setDescription("Clear Time (seconds) *without delay or time you exit from world*").setRequired(true))
+    .addNumberOption((option) => option.setName("xp_boost").setDescription("XP Boost Multiplier in % (don't put % on it)").setRequired(false))
+    .addNumberOption((option) => option.setName("gold_boost").setDescription("Gold Boost Multiplier in % (don't put % on it)").setRequired(false))
+    .addNumberOption((option) => option.setName("ore_boost").setDescription("Ore Boost Multiplier in % (don't put % on it)").setRequired(false))
+    .toJSON(),
+
+  new SlashCommandBuilder().setName("help").setDescription("Show Help Information").toJSON(),
 ];
 
 const rest = new REST({ version: "10" }).setToken(BOT_TOKEN);
